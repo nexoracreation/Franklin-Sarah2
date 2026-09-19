@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff4f8b" />
+    <title>Sarah & Franklin — Sangeet Night</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="ticker" aria-label="Wedding announcement">
+      <div class="ticker-track">
+        <span>SANGEET NIGHT</span><i>✦</i><span>SARAH + FRANKLIN</span><i>✦</i><span>COME DANCE WITH US</span><i>✦</i><span>SANGEET NIGHT</span><i>✦</i><span>SARAH + FRANKLIN</span><i>✦</i><span>COME DANCE WITH US</span><i>✦</i>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero" id="top">
+        <nav>
+          <a class="monogram" href="#top" aria-label="Back to top">S<span>♥</span>F</a>
+          <button class="sound-toggle" type="button" aria-pressed="false"><span class="sound-icon">♪</span> good vibes</button>
+          <a class="nav-rsvp" href="#rsvp">RSVP <span>↘</span></a>
+        </nav>
+
+        <div class="flower flower-one" aria-hidden="true"><span></span><span></span><span></span><span></span><b>✦</b></div>
+        <div class="flower flower-two" aria-hidden="true"><span></span><span></span><span></span><span></span><b>♥</b></div>
+        <div class="spark spark-one" aria-hidden="true">✦</div>
+        <div class="spark spark-two" aria-hidden="true">✹</div>
+
+        <div class="hero-body">
+          <div class="hero-copy">
+            <p class="eyebrow">WE ARE WELCOMING YOU TO THE SANGEET CELEBRATION AND WEDDING RECEPTION OF</p>
+            <h1><em>Sarah</em><br /><span>&amp;</span><br />Franklin</h1>
+            <p class="hero-note">One big night of music, colour<br />and the people we love.</p>
+          </div>
+
+          <p class="mobile-scratch-label" aria-hidden="true">SCRATCH THE CIRCLE TO UNLOCK ↓</p>
+          <div class="scratch-card" id="scratch-card">
+            <div class="revealed-date" aria-live="polite">
+              <span>save the date</span>
+              <strong>27</strong>
+              <b>DECEMBER</b>
+              <small>2026</small>
+            </div>
+            <canvas id="scratch-canvas" tabindex="0" aria-label="Scratch this card with a mouse or finger to reveal the wedding date and unlock the invitation."></canvas>
+            <p class="scratch-prompt" id="scratch-prompt">SCRATCH TO UNLOCK <span>✦</span></p>
+          </div>
+        </div>
+
+        <a class="scroll-cue" id="scroll-cue" href="#scratch-card"><span>SCRATCH TO UNLOCK</span><b>✦</b></a>
+      </section>
+
+      <section class="marquee-section" aria-hidden="true">
+        <p>SANGEET NIGHT <span>♥</span> SARAH + FRANKLIN <span>♥</span> LET'S DANCE <span>♥</span> SANGEET NIGHT <span>♥</span> SARAH + FRANKLIN <span>♥</span> LET'S DANCE</p>
+      </section>
+
+      <section class="details" id="details">
+        <div class="section-intro">
+          <p class="eyebrow">THE MAIN EVENT</p>
+          <h2>Three beautiful<br /><em>moments.</em></h2>
+        </div>
+        <div class="details-grid">
+          <article class="detail-card ceremony">
+            <p class="card-number">01</p>
+            <div class="card-icon">♬</div>
+            <h3>the Sangeet</h3>
+            <p>Our main celebration<br />Venue &amp; time coming soon</p>
+            <a href="#rsvp">Save your spot <span>↘</span></a>
+          </article>
+          <article class="detail-card party">
+            <p class="card-number">02</p>
+            <div class="card-icon">✦</div>
+            <h3>church wedding</h3>
+            <p>Church location &amp; time<br />coming soon</p>
+            <a href="#rsvp">Save your spot <span>↘</span></a>
+          </article>
+          <article class="detail-card dress">
+            <p class="card-number">03</p>
+            <div class="card-icon">✿</div>
+            <h3>reception</h3>
+            <p>Reception location &amp; time<br />coming soon</p>
+            <a href="#rsvp">Save your spot <span>↘</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="love-note">
+        <figure class="couple-photo-feature">
+          <div class="photo-wrap">
+            <img src="COUPLE PIC.jpeg" alt="Sarah and Franklin" />
+            <div class="photo-name-overlay">
+              <span>SARAH <i>♥</i> FRANKLIN</span>
+            </div>
+          </div>
+          <figcaption>THE HAPPY COUPLE</figcaption>
+        </figure>
+      </section>
+
+      <section class="weekend" id="style-note">
+        <div class="weekend-visual">
+          <div class="retro-sun"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="dancing-figures" aria-hidden="true"><span>◖</span><span>◗</span></div>
+          <p>LET'S<br /><em>DANCE</em></p>
+        </div>
+        <div class="weekend-copy">
+          <p class="eyebrow">WHAT TO WEAR</p>
+          <h2>no strict<br /><em>dress code!</em></h2>
+          <p>Come as you are — festive, colourful, and ready to celebrate with us. Here are some outfit ideas to inspire you:</p>
+          <div class="chips">
+            <span>Lehenga / Saree</span>
+            <span>Salwar Kameez</span>
+            <span>Kurta &amp; Pyjama</span>
+            <span>Sherwani</span>
+            <span>Western Formals</span>
+            <span>Fusion / Indo-Western</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="rsvp" id="rsvp">
+        <div class="rsvp-heading">
+          <p class="eyebrow">ARE YOU IN?</p>
+          <h2>let's <em>celebrate!</em></h2>
+          <p>Let Sarah &amp; Franklin know<br />if you'll be there.</p>
+        </div>
+        <form id="rsvp-form">
+          <label>
+            <span>Your name</span>
+            <input required name="name" autocomplete="name" placeholder="Your full name" />
+          </label>
+          <label>
+            <span>Phone number</span>
+            <input required name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="+91 98765 43210" />
+          </label>
+          <fieldset>
+            <legend>Will you be there?</legend>
+            <label class="choice"><input required type="radio" name="attendance" value="attending" /><span>Absolutely!</span></label>
+            <label class="choice"><input type="radio" name="attendance" value="declining" /><span>Sending love from afar</span></label>
+          </fieldset>
+          <label class="guest-count" id="guest-count-wrap" hidden>
+            <span>How many guests, including you?</span>
+            <input type="number" name="guestCount" min="1" max="10" inputmode="numeric" placeholder="1" />
+          </label>
+          <button class="submit" type="submit">SEND RSVP <span>✦</span></button>
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>SARAH <span>♥</span> FRANKLIN</p>
+      <a href="#top">Back to the top ↑</a>
+      <p class="footer-small">MADE WITH LOVE &amp; A LITTLE GLITTER</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
