@@ -93,14 +93,14 @@ if (scratchCard && scratchCanvas) {
     scratchContext.scale(scale, scale);
 
     const cover = scratchContext.createLinearGradient(0, 0, scratchBounds.width, scratchBounds.height);
-    cover.addColorStop(0, '#b9efff');
-    cover.addColorStop(.5, '#7bd6f5');
-    cover.addColorStop(1, '#55b9e4');
+    cover.addColorStop(0, '#24233a');
+    cover.addColorStop(.5, '#171629');
+    cover.addColorStop(1, '#0e0d1c');
     scratchContext.fillStyle = cover;
     scratchContext.fillRect(0, 0, scratchBounds.width, scratchBounds.height);
 
-    scratchContext.strokeStyle = 'rgba(32, 32, 58, .86)';
-    scratchContext.lineWidth = 2.5;
+    scratchContext.strokeStyle = 'rgba(244, 192, 85, .3)';
+    scratchContext.lineWidth = 1.8;
     const gap = Math.max(25, scratchBounds.width / 12);
     for (let offset = -scratchBounds.height; offset < scratchBounds.width * 1.5; offset += gap) {
       scratchContext.beginPath();
