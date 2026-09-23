@@ -371,22 +371,54 @@ h1 span {
 .card-number { font: 500 11px "DM Mono", monospace; color: var(--gold); }
 .card-icon { position: absolute; top: 32px; right: 26px; font-size: 42px; color: var(--gold); opacity: .8; }
 .detail-card h3 { 
-  margin: 70px 0 14px; 
-  font: 800 32px/.95 "Syne", sans-serif; 
-  letter-spacing: -.04em; 
-  color: #fff;
+  margin: 64px 0 10px; 
+  font: 800 28px/.95 "Syne", sans-serif; 
+  letter-spacing: -.03em; 
+  color: #fff; 
   text-transform: uppercase;
 }
-.detail-card > p:not(.card-number) { font-size: 15px; line-height: 1.6; color: var(--muted); }
+.card-date {
+  font: 600 11px "DM Mono", monospace;
+  letter-spacing: .14em;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.card-venue {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+.card-venue strong {
+  color: #fff;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 4px;
+}
 .detail-card a { 
   position: absolute; 
-  bottom: 28px; 
+  bottom: 24px; 
+  left: 28px;
+  right: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid rgba(244, 192, 85, .4);
+  border-radius: 999px;
+  background: rgba(244, 192, 85, .08);
   font: 600 11px "DM Mono", monospace; 
-  letter-spacing: .1em; 
-  text-decoration: none;
+  letter-spacing: .08em; 
+  text-decoration: none; 
   color: var(--gold);
+  transition: all .2s ease;
 }
-.detail-card a span { font-size: 14px; margin-left: 4px; }
+.detail-card a:hover {
+  background: var(--gold);
+  color: #090912;
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+.detail-card a span { font-size: 13px; margin-left: 6px; }
 
 /* ─── Couple Photo ─── */
 .love-note { padding: 50px 24px 100px; background: var(--night-bg); border-bottom: 1px solid var(--border-line); }
