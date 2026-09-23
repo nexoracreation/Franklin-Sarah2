@@ -3,162 +3,194 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0a14" />
-    <title>Sarah & Franklin — Sangeet Night</title>
+    <meta name="theme-color" content="#090912" />
+    <title>Sarah's Soirée — Sangeet Night</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,600..900;1,9..144,600..900&family=Righteous&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-  </head>
   <body>
-    <div class="cursor-dot" aria-hidden="true"></div>
-    <div class="ticker" aria-label="Wedding announcement">
-      <div class="ticker-track">
-        <span>SANGEET NIGHT</span><i>✦</i><span>SARAH + FRANKLIN</span><i>✦</i><span>COME DANCE WITH US</span><i>✦</i><span>SANGEET NIGHT</span><i>✦</i><span>SARAH + FRANKLIN</span><i>✦</i><span>COME DANCE WITH US</span><i>✦</i>
-      </div>
+    <!-- Animated Ambient Background -->
+    <div class="ambient-bg" aria-hidden="true">
+      <div class="ambient-glow glow-1"></div>
+      <div class="ambient-glow glow-2"></div>
+      <div class="ambient-glow glow-3"></div>
+      <div class="ambient-noise"></div>
     </div>
 
     <main>
-      <section class="hero" id="top">
-        <nav>
-          <a class="monogram" href="#top" aria-label="Back to top">S<span>♥</span>F</a>
-          <button class="sound-toggle" type="button" aria-pressed="false"><span class="sound-icon">♪</span> good vibes</button>
-          <a class="nav-rsvp" href="#rsvp">RSVP <span>↘</span></a>
-        </nav>
-
-        <div class="flower flower-one" aria-hidden="true"><span></span><span></span><span></span><span></span><b>✦</b></div>
-        <div class="flower flower-two" aria-hidden="true"><span></span><span></span><span></span><span></span><b>♥</b></div>
-        <div class="spark spark-one" aria-hidden="true">✦</div>
-        <div class="spark spark-two" aria-hidden="true">✹</div>
-
-        <div class="hero-body">
-          <div class="hero-copy">
-            <p class="eyebrow">WE ARE WELCOMING YOU TO THE SANGEET CELEBRATION AND WEDDING RECEPTION OF</p>
-            <h1><em>Sarah</em><br /><span>&amp;</span><br />Franklin</h1>
-            <p class="hero-note">One big night of music, colour<br />and the people we love.</p>
+      <!-- Hero: Left aligned, clear, no animations, with textured stamp -->
+      <section class="hero-section" id="top">
+        <div class="content-container">
+          <div class="hero-header-row">
+            <p class="section-tag">THE BRIDE'S SIDE · GOOD VIBES ONLY</p>
+            <button class="sound-toggle" type="button" aria-pressed="false" title="Click for ambient vibe">
+              <span class="sound-icon">♪</span> good vibes
+            </button>
           </div>
+          
+          <h1 class="hero-title">Sarah's<br /><em>Soirée</em></h1>
+          <p class="hero-desc">One night before the big day beneath the lights. Low lighting, high volume, and your best dance moves required.</p>
+          
+          <div class="hero-cta-group">
+            <a class="btn-primary" href="#rsvp">JOIN THE EVENING</a>
+            <a class="btn-secondary" href="#details">VIEW CELEBRATION DETAILS</a>
+          </div>
+        </div>
+      </section>
 
-          <p class="mobile-scratch-label" aria-hidden="true">SCRATCH THE CIRCLE TO UNLOCK ↓</p>
-          <div class="scratch-card" id="scratch-card">
-            <div class="revealed-date" aria-live="polite">
-              <span>save the date</span>
-              <strong>27</strong>
-              <b>DECEMBER</b>
-              <small>2026</small>
+      <!-- The Warm-up to the Big Day (Story / Intro Section) -->
+      <section class="story-section">
+        <div class="content-container">
+          <p class="section-tag">A NOTE FROM SARAH</p>
+          <h2 class="story-title">The warm-up<br /><em>to the big day.</em></h2>
+          <p class="story-lead">The night before the main event — dedicated to my closest friends and family who have shared every chapter of my life.</p>
+          <p class="story-body">Come ready to dance, laugh, celebrate, and make unforgettable memories before the wedding day arrives. The complete evening flow will be shared directly with confirmed guests.</p>
+        </div>
+      </section>
+
+      <!-- Glimpse of Couples: Sarah loves Franklin -->
+      <section class="couple-section">
+        <div class="content-container">
+          <p class="section-tag">GLIMPSE OF THE COUPLE</p>
+          <div class="couple-card">
+            <div class="couple-photo-box">
+              <img src="COUPLE.jpeg" alt="Sarah and Franklin" />
             </div>
-            <canvas id="scratch-canvas" tabindex="0" aria-label="Scratch this card with a mouse or finger to reveal the wedding date and unlock the invitation."></canvas>
-            <p class="scratch-prompt" id="scratch-prompt">SCRATCH TO UNLOCK <span>✦</span></p>
-          </div>
-        </div>
-
-        <a class="scroll-cue" id="scroll-cue" href="#scratch-card"><span>SCRATCH TO UNLOCK</span><b>✦</b></a>
-      </section>
-
-      <section class="marquee-section" aria-hidden="true">
-        <p>SANGEET NIGHT <span>♥</span> SARAH + FRANKLIN <span>♥</span> LET'S DANCE <span>♥</span> SANGEET NIGHT <span>♥</span> SARAH + FRANKLIN <span>♥</span> LET'S DANCE</p>
-      </section>
-
-      <section class="details" id="details">
-        <div class="section-intro">
-          <p class="eyebrow">THE MAIN EVENT</p>
-          <h2>Three beautiful<br /><em>moments.</em></h2>
-        </div>
-        <div class="details-grid">
-          <article class="detail-card ceremony">
-            <p class="card-number">01</p>
-            <div class="card-icon">♬</div>
-            <h3>the Sangeet</h3>
-            <p class="card-date">27 DECEMBER 2026</p>
-            <p class="card-venue"><strong>Nutmeg County Resort</strong><br />Muvattupuzha, Kerala</p>
-            <a href="https://www.google.com/maps/place/nutmeg+county+resort+muvattupuzha/data=!4m2!3m1!1s0x3b07dc9a95555555:0x8da7f37ee2c106af?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener noreferrer">View on Map <span>↗</span></a>
-          </article>
-          <article class="detail-card party">
-            <p class="card-number">02</p>
-            <div class="card-icon">✦</div>
-            <h3>church wedding</h3>
-            <p class="card-date">28 DECEMBER 2026</p>
-            <p class="card-venue"><strong>St. Mary's Jacobite Syrian Cathedral</strong><br />Karakunnam, Puthuppady, Kerala</p>
-            <a href="https://www.google.com/maps/dir/10.0981785,76.642069/St.+Mary's+Jacobite+Syrian+Cathedral,+2J22%2BV3V,+Kochi+-+Madurai+-+Dhanushkodi+Rd,+Karakunnam,+Puthuppady,+Keralam+686673/@10.0015667,76.5996264,19z/data=!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3b07e79c053eb755:0x872c13eb04a95d2b!2m2!1d76.6001659!2d10.0022306!3e0?entry=ttu&g_ep=EgoyMDI2MDkyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Get Directions <span>↗</span></a>
-          </article>
-          <article class="detail-card dress">
-            <p class="card-number">03</p>
-            <div class="card-icon">✿</div>
-            <h3>wedding reception</h3>
-            <p class="card-date">28 DECEMBER 2026</p>
-            <p class="card-venue"><strong>C9 Event Center By C9 Hospitality</strong><br />Puthuppady, Muvattupuzha, Kerala</p>
-            <a href="https://www.google.com/maps/dir//C9+Event+Center+By+C9+Hospitality,+Puthuppady,+Muvattupuzha,+Keralam+686673/@10.0075197,76.6031885,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3b07e7abe15ee543:0xbf6bf821efe82d4!2m2!1d76.6057634!2d10.0075144?entry=ttu&g_ep=EgoyMDI2MDkyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Get Directions <span>↗</span></a>
-          </article>
-        </div>
-      </section>
-
-      <section class="love-note">
-        <figure class="couple-photo-feature">
-          <div class="photo-wrap">
-            <img src="COUPLE PIC.jpeg" alt="Sarah and Franklin" />
-            <div class="photo-name-overlay">
-              <span>SARAH <i>♥</i> FRANKLIN</span>
+            <div class="couple-caption">
+              <h3>Sarah <em>loves</em> Franklin</h3>
+              <p>Two hearts, one crazy journey, and a lifetime of celebration ahead.</p>
             </div>
           </div>
-          <figcaption>THE HAPPY COUPLE</figcaption>
-        </figure>
+        </div>
       </section>
 
-      <section class="weekend" id="style-note">
-        <div class="weekend-visual">
-          <div class="retro-sun"><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="dancing-figures" aria-hidden="true"><span>◖</span><span>◗</span></div>
-          <p>LET'S<br /><em>DANCE</em></p>
-        </div>
-        <div class="weekend-copy">
-          <p class="eyebrow">WHAT TO WEAR</p>
-          <h2>no strict<br /><em>dress code!</em></h2>
-          <p>Come as you are — festive, colourful, and ready to celebrate with us. Here are some outfit ideas to inspire you:</p>
+      <!-- Desi Disco Midnight / Dress Combo & Schedule -->
+      <section class="style-section" id="style">
+        <div class="content-container">
+          <p class="section-tag">THE DRESS CODE &amp; SCHEDULE</p>
+          <h2 class="style-title">desi disco<br /><em>midnight.</em></h2>
+          <p class="style-desc">There are no restrictions on your dress combo! Silk, jewel tones, disco glam, or fusion — wear whatever makes you feel extraordinary. <strong>The only rule: be ready to dance all night!</strong></p>
+          
+          <div class="schedule-box">
+            <div class="schedule-item">
+              <span class="schedule-time">6:00 PM</span>
+              <div class="schedule-info">
+                <h4>Sangeet Doors Open</h4>
+                <p>Welcome drinks, appetizers, and warm-up beats</p>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="schedule-time">9:00 PM</span>
+              <div class="schedule-info">
+                <h4>Last Dolby Track</h4>
+                <p>Full-volume DJ set, dhol rhythms, and non-stop dance</p>
+              </div>
+            </div>
+          </div>
+
           <div class="chips">
             <span>Lehenga / Saree</span>
             <span>Salwar Kameez</span>
             <span>Kurta &amp; Pyjama</span>
             <span>Sherwani</span>
             <span>Western Formals</span>
-            <span>Fusion / Indo-Western</span>
+            <span>Indo-Western Fusion</span>
+            <span>Dancing Shoes</span>
           </div>
         </div>
       </section>
 
-      <section class="rsvp" id="rsvp">
-        <div class="rsvp-heading">
-          <p class="eyebrow">ARE YOU IN?</p>
-          <h2>let's <em>celebrate!</em></h2>
-          <p>Let Sarah &amp; Franklin know<br />if you'll be there.</p>
+      <!-- Three Moments / Location Section (Placed right before RSVP) -->
+      <section class="details-section" id="details">
+        <div class="content-container">
+          <p class="section-tag">CELEBRATION LOCATIONS</p>
+          <h2 class="section-heading">Three beautiful<br /><em>moments.</em></h2>
+          
+          <div class="details-grid">
+            <article class="detail-card">
+              <span class="card-num">01</span>
+              <h3>The Sangeet</h3>
+              <p class="card-date">27 DECEMBER 2026</p>
+              <p class="card-venue"><strong>Nutmeg County Resort</strong><br />Muvattupuzha, Kerala</p>
+              <a class="card-link" href="https://www.google.com/maps/place/nutmeg+county+resort+muvattupuzha/data=!4m2!3m1!1s0x3b07dc9a95555555:0x8da7f37ee2c106af?sa=X&ved=1t:242&ictx=111" target="_blank" rel="noopener noreferrer">View on Map <span>↗</span></a>
+            </article>
+
+            <article class="detail-card">
+              <span class="card-num">02</span>
+              <h3>Church Wedding</h3>
+              <p class="card-date">28 DECEMBER 2026</p>
+              <p class="card-venue"><strong>St. Mary's Jacobite Syrian Cathedral</strong><br />Karakunnam, Puthuppady, Kerala</p>
+              <a class="card-link" href="https://www.google.com/maps/dir/10.0981785,76.642069/St.+Mary's+Jacobite+Syrian+Cathedral,+2J22%2BV3V,+Kochi+-+Madurai+-+Dhanushkodi+Rd,+Karakunnam,+Puthuppady,+Keralam+686673/@10.0015667,76.5996264,19z/data=!4m10!4m9!1m1!4e1!1m5!1m1!1s0x3b07e79c053eb755:0x872c13eb04a95d2b!2m2!1d76.6001659!2d10.0022306!3e0?entry=ttu&g_ep=EgoyMDI2MDkyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Get Directions <span>↗</span></a>
+            </article>
+
+            <article class="detail-card">
+              <span class="card-num">03</span>
+              <h3>Wedding Reception</h3>
+              <p class="card-date">28 DECEMBER 2026</p>
+              <p class="card-venue"><strong>C9 Event Center By C9 Hospitality</strong><br />Puthuppady, Muvattupuzha, Kerala</p>
+              <a class="card-link" href="https://www.google.com/maps/dir//C9+Event+Center+By+C9+Hospitality,+Puthuppady,+Muvattupuzha,+Keralam+686673/@10.0075197,76.6031885,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3b07e7abe15ee543:0xbf6bf821efe82d4!2m2!1d76.6057634!2d10.0075144?entry=ttu&g_ep=EgoyMDI2MDkyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Get Directions <span>↗</span></a>
+            </article>
+          </div>
         </div>
-        <form id="rsvp-form">
-          <label>
-            <span>Your name</span>
-            <input required name="name" autocomplete="name" placeholder="Your full name" />
-          </label>
-          <label>
-            <span>Phone number</span>
-            <input required name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="+91 98765 43210" />
-          </label>
-          <fieldset>
-            <legend>Will you be there?</legend>
-            <label class="choice"><input required type="radio" name="attendance" value="attending" /><span>Absolutely!</span></label>
-            <label class="choice"><input type="radio" name="attendance" value="declining" /><span>Sending love from afar</span></label>
-          </fieldset>
-          <label class="guest-count" id="guest-count-wrap" hidden>
-            <span>How many guests, including you?</span>
-            <input type="number" name="guestCount" min="1" max="10" inputmode="numeric" placeholder="1" />
-          </label>
-          <button class="submit" type="submit">SEND RSVP <span>✦</span></button>
-          <p class="form-message" aria-live="polite"></p>
-        </form>
+      </section>
+
+      <!-- RSVP Section: Headline centered at top, form cleanly structured -->
+      <section class="rsvp-section" id="rsvp">
+        <div class="content-container">
+          <div class="rsvp-center-header">
+            <p class="section-tag">YOUR PLACE BENEATH THE LIGHTS</p>
+            <h2 class="rsvp-title">Will you <em>dance with us?</em></h2>
+            <p class="rsvp-subtitle">Kindly confirm your presence by entering your details below. We cannot wait to celebrate with you!</p>
+          </div>
+
+          <form id="rsvp-form" class="rsvp-form">
+            <div class="form-row">
+              <label class="form-group">
+                <span>Your Name</span>
+                <input required name="name" autocomplete="name" placeholder="Full name" />
+              </label>
+              <label class="form-group">
+                <span>Phone Number</span>
+                <input required name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="+91 98765 43210" />
+              </label>
+            </div>
+
+            <fieldset class="attendance-fieldset">
+              <legend>Will you be there?</legend>
+              <div class="choices-wrap">
+                <label class="choice">
+                  <input required type="radio" name="attendance" value="attending" />
+                  <span>Count me in! Ready to dance</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="attendance" value="declining" />
+                  <span>Sending love from afar</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="form-group guest-count" id="guest-count-wrap" hidden>
+              <span>How many guests, including you?</span>
+              <input type="number" name="guestCount" min="1" max="10" inputmode="numeric" placeholder="1" />
+            </label>
+
+            <button class="submit" type="submit">CONFIRM RSVP <span>✦</span></button>
+            <p class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>SARAH <span>♥</span> FRANKLIN</p>
-      <a href="#top">Back to the top ↑</a>
-      <p class="footer-small">MADE WITH LOVE &amp; A LITTLE GLITTER</p>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="content-container footer-inner">
+        <p class="footer-brand">Sarah's Soirée</p>
+        <span class="footer-tagline">GOOD VIBES ONLY ✦ SARAH'S SOIRÉE</span>
+        <a class="footer-back" href="#top">Back to top ↑</a>
+      </div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
