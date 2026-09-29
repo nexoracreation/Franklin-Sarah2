@@ -9,7 +9,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-  <body>
+  </head>
+  <body class="intro-locked">
+    <!-- Curtain Intro Overlay -->
+    <div id="intro-curtain" class="intro-curtain" aria-label="Curtain Opening">
+      <div class="curtain-half curtain-left">
+        <div class="poster-wrap">
+          <img src="intro.png" alt="Sarah’s Shaam-e-Sangeet" />
+        </div>
+      </div>
+      <div class="curtain-half curtain-right">
+        <div class="poster-wrap">
+          <img src="intro.png" alt="Sarah’s Shaam-e-Sangeet" />
+        </div>
+      </div>
+      <div class="curtain-ui">
+        <button id="open-invitation-btn" class="open-invitation-btn" type="button">
+          <span>Tap to open invitation</span>
+          <span class="btn-sparkle">✦</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Animated Ambient Background -->
     <div class="ambient-bg" aria-hidden="true">
       <div class="ambient-glow glow-1"></div>
@@ -18,14 +39,20 @@
       <div class="ambient-noise"></div>
     </div>
 
+    <!-- Background Song Audio -->
+    <audio id="bg-audio" loop preload="auto">
+      <source src="song.mp3" type="audio/mpeg">
+      <source src="song.mpeg" type="audio/mpeg">
+    </audio>
+
     <main>
       <!-- Hero: Left aligned, clear, no animations -->
       <section class="hero-section" id="top">
         <div class="content-container">
           <div class="hero-header-row">
             <p class="section-tag">LIGHTS · MUSIC · MASTI</p>
-            <button class="sound-toggle" type="button" aria-pressed="false" title="Click for ambient vibe">
-              <span class="sound-icon">♪</span> good vibes
+            <button class="sound-toggle" type="button" aria-pressed="false" title="Click to play song">
+              <span class="sound-icon">♪</span> play song
             </button>
           </div>
           

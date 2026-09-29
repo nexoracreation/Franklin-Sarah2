@@ -65,46 +65,79 @@ if (form) {
   });
 }
 
-// Optional ambient sound generator
-let audioContext;
-let isAudioPlaying = false;
-let ambientGain;
+// ─── Curtain Intro & Background Song Controller ───
+const introCurtain = document.querySelector('#intro-curtain');
+const openInvitationBtn = document.querySelector('#open-invitation-btn');
+const bgAudio = document.querySelector('#bg-audio');
+let hasOpened = false;
 
-function initAudio() {
-  if (audioContext) return;
-  const AudioCtx = window.AudioContext || window.webkitAudioContext;
-  if (!AudioCtx) return;
-  audioContext = new AudioCtx();
-  ambientGain = audioContext.createGain();
-  ambientGain.gain.value = 0.05;
-  ambientGain.connect(audioContext.destination);
+function openInvitation() {
+  if (hasOpened) return;
+  hasOpened = true;
 
-  // Soft warm chord pad
-  const frequencies = [261.63, 329.63, 392.00, 523.25]; // C major warm chord
-  frequencies.forEach(freq => {
-    const osc = audioContext.createOscillator();
-    osc.type = 'sine';
-    osc.frequency.value = freq;
-    osc.connect(ambientGain);
-    osc.start();
+  // Split curtain into two halves
+  if (introCurtain) {
+    introCurtain.classList.add('is-open');
+  }
+  document.body.classList.remove('intro-locked');
+
+  // Play song from the beginning
+  if (bgAudio) {
+    bgAudio.currentTime = 0;
+    bgAudio.play().then(() => {
+      if (soundButton) {
+        soundButton.classList.add('is-playing');
+        soundButton.setAttribute('aria-pressed', 'true');
+        soundButton.innerHTML = '<span class="sound-icon">⏸</span> pause song';
+      }
+    }).catch(err => {
+      console.warn('Audio playback failed or was blocked:', err);
+    });
+  }
+
+  // Remove curtain from DOM tree flow after animation finishes
+  window.setTimeout(() => {
+    if (introCurtain) {
+      introCurtain.style.display = 'none';
+    }
+  }, 1400);
+}
+
+if (openInvitationBtn) {
+  openInvitationBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openInvitation();
   });
 }
 
-if (soundButton) {
-  soundButton.addEventListener('click', () => {
-    if (!audioContext) {
-      initAudio();
+if (introCurtain) {
+  introCurtain.addEventListener('click', () => {
+    openInvitation();
+  });
+}
+
+if (soundButton && bgAudio) {
+  soundButton.addEventListener('click', async () => {
+    try {
+      if (bgAudio.paused) {
+        await bgAudio.play();
+        soundButton.classList.add('is-playing');
+        soundButton.setAttribute('aria-pressed', 'true');
+        soundButton.innerHTML = '<span class="sound-icon">⏸</span> pause song';
+      } else {
+        bgAudio.pause();
+        soundButton.classList.remove('is-playing');
+        soundButton.setAttribute('aria-pressed', 'false');
+        soundButton.innerHTML = '<span class="sound-icon">♪</span> play song';
+      }
+    } catch (error) {
+      console.warn('Audio toggle failed:', error);
     }
-    if (audioContext && audioContext.state === 'suspended') {
-      audioContext.resume();
-    }
-    isAudioPlaying = !isAudioPlaying;
-    if (ambientGain) {
-      ambientGain.gain.setTargetAtTime(isAudioPlaying ? 0.04 : 0.0001, audioContext.currentTime, 0.1);
-    }
-    soundButton.setAttribute('aria-pressed', String(isAudioPlaying));
-    soundButton.innerHTML = isAudioPlaying
-      ? '<span class="sound-icon">♪</span> vibes activated'
-      : '<span class="sound-icon">♪</span> good vibes only';
+  });
+
+  bgAudio.addEventListener('ended', () => {
+    soundButton.classList.remove('is-playing');
+    soundButton.setAttribute('aria-pressed', 'false');
+    soundButton.innerHTML = '<span class="sound-icon">♪</span> play song';
   });
 }

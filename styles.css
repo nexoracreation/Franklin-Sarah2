@@ -21,6 +21,117 @@ body {
   overflow-x: hidden; 
   position: relative;
 }
+body.intro-locked {
+  height: 100dvh;
+  overflow: hidden !important;
+  overscroll-behavior: none;
+}
+
+/* ─── Curtain Intro Overlay (Splits into two parts) ─── */
+.intro-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #090912;
+  overflow: hidden;
+  transition: visibility 1.4s ease, opacity 0.4s ease 1.2s;
+}
+.intro-curtain.is-open {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+.curtain-half {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: #090912;
+  transition: transform 1.25s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+.curtain-left {
+  -webkit-clip-path: polygon(0 0, calc(50% + 1px) 0, calc(50% + 1px) 100%, 0 100%);
+  clip-path: polygon(0 0, calc(50% + 1px) 0, calc(50% + 1px) 100%, 0 100%);
+}
+.curtain-right {
+  -webkit-clip-path: polygon(calc(50% - 1px) 0, 100% 0, 100% 100%, calc(50% - 1px) 100%);
+  clip-path: polygon(calc(50% - 1px) 0, 100% 0, 100% 100%, calc(50% - 1px) 100%);
+}
+.intro-curtain.is-open .curtain-left {
+  transform: translateX(-100%);
+}
+.intro-curtain.is-open .curtain-right {
+  transform: translateX(100%);
+}
+.poster-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #171536 0%, #090912 85%);
+}
+.poster-wrap img {
+  max-width: 100%;
+  max-height: 100dvh;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+.curtain-ui {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: clamp(36px, 8vh, 75px);
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.intro-curtain.is-open .curtain-ui {
+  opacity: 0;
+}
+.open-invitation-btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 36px;
+  background: linear-gradient(135deg, #f4c055 0%, #d49a2a 100%);
+  color: #090912;
+  border: 1px solid #ffe299;
+  border-radius: 999px;
+  font: 700 13px "Space Grotesk", sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 35px rgba(244, 192, 85, 0.65), 0 12px 35px rgba(0, 0, 0, 0.8);
+  transition: transform .25s ease, box-shadow .25s ease;
+  animation: curtainBtnPulse 2.4s ease-in-out infinite;
+}
+.open-invitation-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 50px rgba(244, 192, 85, 0.9), 0 16px 45px rgba(0, 0, 0, 0.85);
+}
+.open-invitation-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+.btn-sparkle {
+  font-size: 14px;
+  color: #090912;
+}
+@keyframes curtainBtnPulse {
+  0%, 100% { box-shadow: 0 0 25px rgba(244, 192, 85, 0.5), 0 10px 30px rgba(0, 0, 0, 0.75); }
+  50% { box-shadow: 0 0 45px rgba(244, 192, 85, 0.85), 0 14px 40px rgba(0, 0, 0, 0.85); }
+}
 
 /* ─── Animated Ambient Background ─── */
 .ambient-bg {
@@ -139,6 +250,12 @@ button, input, textarea { font: inherit; }
   background: var(--gold);
   color: var(--night-bg);
   box-shadow: 0 0 16px var(--gold-glow);
+}
+.sound-toggle.is-playing {
+  background: var(--gold);
+  color: var(--night-bg);
+  box-shadow: 0 0 20px var(--gold-glow);
+  border-color: var(--gold);
 }
 .sound-toggle .sound-icon {
   margin-right: 5px;
